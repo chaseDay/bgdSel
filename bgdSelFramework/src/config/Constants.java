@@ -4,8 +4,8 @@ public class Constants {
 	
 	//System Variables
 	public static final String URL = "http://bgd.softwaydev.com/";
-	public static final String Path_TestData = "C://Users//chaseday//Desktop//bgd_workspace//chaseSelFramework//Hybrid Keyword Driven//src//dataEngine//DataEngine.xlsx";
-	public static final String Path_OR = "C://Users//chaseday//Desktop//bgd_workspace//chaseSelFramework//Hybrid Keyword Driven//src//config//OR.txt";
+	public static final String Path_TestData = "C://Users//chaseday//Desktop//bgdSel//bgdSelFramework//src//dataEngine//DataEngine.xlsx";
+	public static final String Path_OR = "C://Users//chaseday//Desktop//bgdSel//bgdSelFramework//src//config//OR.txt";
 	public static final String Path_IE = "//drivers//IEDriverServer.exe"; //full path is created in ActionKeywords.java, does not need to be changed
 	public static final String Path_Chrome = "//drivers//chromedriver.exe"; //full path is created in ActionKeywords.java, does not need to be changed
 	public static final String File_TestData = "DataEngine.xlsx";

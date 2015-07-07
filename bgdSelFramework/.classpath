@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="C:/Users/chaseday/Desktop/poi,log4j/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="C:/Users/chaseday/Desktop/poi,log4j/poi-3.12-beta1-20150228.jar"/>
 	<classpathentry kind="lib" path="C:/Users/chaseday/Desktop/poi,log4j/poi-examples-3.12-beta1-20150228.jar"/>
@@ -48,5 +47,6 @@
 	<classpathentry kind="lib" path="C:/Users/chaseday/Desktop/seleniumUpdates7-6-15/selenium-2.46.0/libs/xalan-2.7.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/chaseday/Desktop/seleniumUpdates7-6-15/selenium-2.46.0/libs/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/chaseday/Desktop/seleniumUpdates7-6-15/selenium-2.46.0/libs/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
