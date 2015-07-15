@@ -65,7 +65,25 @@ import executionEngine.DriverScript;
         			}
         		return iNumber;
         		}
-        	
+			
+			
+			public static int getColContains(String caseName, int rowNum, String SheetName) throws Exception{
+				int iColNum=0;
+				try {
+					int colCount = 50;
+					for(;iColNum<colCount; iColNum++){
+						if(ExcelUtils.getCellData(rowNum, iColNum, SheetName).equalsIgnoreCase(caseName)){
+							break;
+						}
+					}
+				} catch (Exception e){
+					Log.error("Class Utils | Method getColContains | Exception desc : "+e.getMessage());
+					DriverScript.bResult = false;
+				}
+				return iColNum;
+			}
+			
+			
 			public static int getRowContains(String sTestCaseName, int colNum,String SheetName) throws Exception{
         		int iRowNum=0;	
         		try {
@@ -88,6 +106,28 @@ import executionEngine.DriverScript;
         		return iRowNum;
         		}
         	
+			
+			public static int getTestCasesCount(String SheetName, String sTestSuiteID, int colNum) throws Exception{
+				try {
+					ExcelWSheet = ExcelWBook.getSheet(SheetName);
+					for(int i = 1;i<ExcelUtils.getRowCount(SheetName);i++){
+						Cell = ExcelWSheet.getRow(i).getCell(colNum);
+						//blank cells are sometimes recognized as cell_type_string so we check for a string length of 0 for a blank cell
+						if(Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_BLANK || Cell.getStringCellValue().length() == 0){
+							int number = i;
+							return number;
+						}
+					}
+	        		int number=ExcelWSheet.getLastRowNum()+1;
+	        		return number;
+        		} catch (Exception e){
+        			Log.error("Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
+        			DriverScript.bResult = false;
+        			return 0;
+				}
+			}
+			
+			
 			public static int getTestStepsCount(String SheetName, String sTestCaseID, int iTestCaseStart) throws Exception{
         		try {
 	        		for(int i=iTestCaseStart;i<=ExcelUtils.getRowCount(SheetName);i++){
