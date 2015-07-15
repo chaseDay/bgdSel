@@ -1,0 +1,429 @@
+# First Visit Popup
+
+btn_closePopup_first=xpath://div[@id='close-button']/a
+
+# Top Navigation (TN)
+
+btn_bgdHome_TN=xpath://header[@id='header']/div/div[2]/a/img
+btn_login_TN=link:Login
+txtbx_search_TN=id:global_search
+btn_contactUs_TN=link:Contact Us
+btn_liveChat_TN=link:Live Chat
+btn_workbench_TN=link:Workbench
+btn_earringBuilder_TN=link:Earring Builder
+btn_wishlist_TN=link:Wishlist
+btn_cart_TN=xpath://header[@id='header']/nav/div[2]/ul/li[4]/a
+hvr_diamonds_TN=link:Diamonds
+hvr_customDesign_TN=link:Custom Design
+hvr_engagementRings_TN=link:Engagement Rings
+hvr_weddingBands_TN=link:Wedding Bands
+hvr_jewelry_TN=link:Jewelry
+hvr_designers_TN=xpath://nav[@id='primary-nav']/div/ul/li[6]/a
+hvr_education_TN=link:Education
+hvr_whyUs_TN=link:Why Us
+
+# Workbench Pop Up (WP)
+
+btn_ring_WP=xpath://div[@id='workbench']/div/ul/li/a
+btn_earrings_WP=xpath://div[@id='workbench']/div/ul/li[2]/a
+btn_pendant_WP=xpath://div[@id='workbench']/div/ul/li[3]/a
+btn_close_WP=xpath://div[@id='en-popup-container']/div/div/div/span
+
+# Contact Us (CU)
+
+txtbx_firstName_CU=xpath://form[@id='contact-form']/div[2]/div/input
+txtbx_lastName_CU=xpath://form[@id='contact-form']/div[3]/div/input
+txtbx_email_CU=xpath://form[@id='contact-form']/div[4]/div/input
+txtbx_phone_CU=xpath://form[@id='contact-form']/div[4]/div[2]/input
+drpdwn_hearAboutUs_CU=xpath://form[@id='contact-form']/div[6]/div/select
+txtbx_subject_CU=xpath://form[@id='contact-form']/div[6]/div[2]/input
+txtbx_message_CU=xpath://form[@id='contact-form']/div[7]/div/textarea
+rBtn_captcha_CU=css:div.recaptcha-checkbox-checkmark
+btn_submit_CU=xpath://form[@id='contact-form']/div[8]/div[3]/button
+
+#Top Navigation Diamonds (DI)
+
+btn_signatureSelection_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr/td/a/strong
+	btn_sigSel_round_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr/td/span/a
+	btn_sigSel_cushion_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr/td/span[2]/a
+	btn_sigSel_brianGavinPrincess_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr/td/span[3]/a
+btn_brianGavinBlue_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr[2]/td/a/strong
+	btn_briGavBlu_round_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr[2]/td/span/a
+	btn_briGavBlu_cushion_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr[2]/td/span[2]/a
+	btn_briGavBlu_princess_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr[2]/td/span[3]/a
+btn_advanceSelect_sigHeartsArrows_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr[3]/td/span/a
+btn_matchedPairs_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr/td[2]/a/strong
+	btn_matPai_round_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr/td[2]/span/a
+	btn_matPai_cushion_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr/td[2]/span[2]/a
+	btn_matPai_princess_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr/td[2]/span[3]/a
+btn_specialtyDiamonds_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr[2]/td[2]/a/strong
+	btn_fancyColorDiamonds_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr[2]/td[2]/span/a
+	btn_weDoBigRocks_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr[2]/td[2]/span[2]/a
+btn_virtualSelection_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div/table/tbody/tr[3]/td[2]/a/strong
+#signature series
+	btn_sigSer_heartsArrowsRound_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div[2]/table/tbody/tr/td/span/a
+	btn_sigSer_heartsArrowsCushion_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div[2]/table/tbody/tr/td/span[2]/a
+	btn_sigSer_brianGavinPrincess_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div[2]/table/tbody/tr/td/span[3]/a
+	btn_sigSer_brianGavinBlue_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div[2]/table/tbody/tr/td/span[4]/a
+#advance selection
+	btn_advanceSelection_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div[2]/table/tbody/tr[2]/td/a/strong
+btn_gallery_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div[2]/table/tbody/tr[3]/td/a/strong
+btn_videos_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div[2]/table/tbody/tr[3]/td/a[2]/strong
+btn_startWithADiamond_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div[3]/table/tbody/tr[2]/td/a/strong
+btn_startWithASetting_DI=xpath://nav[@id='primary-nav']/div/ul/li/div/div[3]/table/tbody/tr[3]/td/a/strong
+
+#Top Navigation Custom Design (CD)
+
+btn_customEngagementRings_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li/p/a/strong
+	btn_cusEngRin_details_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li/p/span/a
+	btn_cusEngRin_process_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li/p/span[2]/a
+	btn_cusEngRin_faqs_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li/p/span[3]/a
+	btn_cusEngRin_contactUs_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li/p/span[4]/a
+	btn_cusEngRin_gallery_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li/p[2]/a/strong
+btn_customJewelry_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li[2]/p/a
+	btn_cusJew_details_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li[2]/p/span/a
+	btn_cusJew_process_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li[2]/p/span[2]/a
+	btn_cusJew_faqs_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li[2]/p/span[3]/a
+	btn_cusJew_contactUs_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li[2]/p/span[4]/a
+	btn_cusJew_gallery_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li[2]/p[2]/a/strong
+btn_designerDiamonds_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li[3]/p/a
+	btn_desDia_details_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li[3]/p/span/a
+	btn_desDia_contactUs_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li[3]/p/span[2]/a
+	btn_desDia_gallery_CD=xpath://nav[@id='primary-nav']/div/ul/li[2]/ul/li[3]/p[2]/a/strong
+
+#Top Navigation Engagement Rings (ER)
+
+btn_engagementRings_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr/td/a/strong
+	btn_solitaire_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr/td/span/a
+	btn_paveSidestones_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr/td/span[2]/a
+	btn_threeStone_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr/td/span[3]/a
+	btn_halo_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr/td/span[4]/a
+btn_designers_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr[2]/td/a/strong
+	btn_brianGavin_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr[2]/td/span/a
+	btn_sholdt_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr[2]/td/span[2]/a
+	btn_hLeviCo_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr[2]/td/span[3]/a
+btn_brianGavinSignature_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr/td[2]/a/strong
+	btn_truth_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr/td[2]/span/a
+	btn_novela_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr/td[2]/span[2]/a
+	btn_legera_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr/td[2]/span[3]/a
+	btn_olympus_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr/td[2]/span[4]/a
+btn_preSelected_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr[2]/td[2]/a/strong
+btn_searchRings_customRings_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div/table/tbody/tr[2]/td[2]/a[2]/strong
+btn_learnMore_customRings_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div[2]/table/tbody/tr/td/a/strong
+btn_designerCollections_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div[2]/table/tbody/tr/td/a[2]/strong
+btn_gallery_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div[2]/table/tbody/tr[2]/td/a/strong
+btn_videos_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div[2]/table/tbody/tr[2]/td/a[2]/strong
+btn_startWithADiamond_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div[3]/table/tbody/tr[2]/td/a/strong
+btn_startWithASetting_ER=xpath://nav[@id='primary-nav']/div/ul/li[3]/div/div[3]/table/tbody/tr[3]/td/a/strong
+
+#Top Navigation Wedding Bands (WB)
+
+btn_anniversaryBands_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li/p/a
+	btn_eternityBands_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li/p/span/a
+	btn_classicBands_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li/p/span[2]/a
+	btn_5StoneRings_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li/p/span[3]/a
+btn_womensWeddingBands_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li[2]/p/a
+	btn_womensClassicBands_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li[2]/p/span/a
+	btn_womensDiamondBands_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li[2]/p/span[2]/a
+	btn_womensWedBands_gallery_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li[2]/p[2]/a/strong
+btn_mensWeddingBands_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li[3]/p/a
+	btn_mensClassicBands_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li[3]/p/span/a
+	btn_mensDiamondBands_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li[3]/p/span[2]/a
+	btn_mensWedBands_gallery_WB=xpath://nav[@id='primary-nav']/div/ul/li[4]/ul/li[3]/p[2]/a/strong
+	
+Top Navigation Jewelry (JE)
+
+btn_diamondJewelry_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td/a/strong
+	btn_diaJew_earrings_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td/span/a
+	btn_diaJew_studs_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td/span[2]/a
+	btn_diaJew_fashion_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td/span[3]/a
+	btn_diaJew_jackets_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td/span[4]/a
+	btn_diaJew_pendants_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td/span[5]/a
+	btn_diaJew_bracelets_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td/span[6]/a
+	btn_diaJew_rightHandRings_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td/span[7]/a
+#pearl jewelry
+	btn_pearlJewel_earrings_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr[2]/td/span/a
+btn_colorGemstone_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td[2]/a/strong
+	btn_colGem_rings_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td[2]/span/a
+	btn_colGem_bracelets_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td[2]/span[2]/a
+	btn_colGem_earrings_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td[2]/span[3]/a
+	btn_colGem_pendants_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr/td[2]/span[4]/a
+btn_silverJewelry_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr[2]/td[2]/a/strong
+btn_goldJewelry_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div/table/tbody/tr[2]/td[2]/a[2]/strong
+#jewelry gifts
+	btn_0-500_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div[2]/table/tbody/tr/td/span/a
+	btn_500-1000_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div[2]/table/tbody/tr/td/span[2]/a
+btn_brianGavinGiftCard_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div[2]/table/tbody/tr/td[2]/strong/a
+btn_gallery_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div[2]/table/tbody/tr[2]/td/a/strong
+btn_videos_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div[2]/table/tbody/tr[2]/td/a[2]/strong
+btn_startWithADiamond_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div[3]/table/tbody/tr[2]/td/a/strong
+btn_startWithASetting_JE=xpath://nav[@id='primary-nav']/div/ul/li[5]/div/div[3]/table/tbody/tr[3]/td/a/strong
+
+# Top Navigation Designers (DE)
+
+btn_brianGavinCollections_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li/p/a
+	btn_fiorella_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li/p/span/a
+	btn_olympus_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li/p/span[2]/a
+	btn_truth_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li/p/span[3]/a
+	btn_novela_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li/p/span[4]/a
+	btn_legera_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li/p/span[5]/a
+	btn_flower_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li/p/span[6]/a
+	btn_lace_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li/p/span[7]/a
+	btn_italianRoseGold_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li/p/span[8]/a
+btn_designerCollections_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li[2]/p/a
+	btn_sholdt_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li[2]/p/span/a
+	btn_coronetSolitaire_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li[2]/p/span[2]/a
+	btn_hLeviCo_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li[2]/p/span[3]/a
+#jewelry case collections
+	btn_wolf_DE=xpath://nav[@id='primary-nav']/div/ul/li[6]/ul/li[3]/p/span/a
+	
+# Top Navigation Education (ED)
+
+btn_theFourCs_ED=xpath://nav[@id='primary-nav']/div/ul/li[7]/div/div/table/tbody/tr/td/a/strong
+	btn_diamondCarat_ED=xpath://nav[@id='primary-nav']/div/ul/li[7]/div/div/table/tbody/tr/td/span/a
+	btn_diamondColor_ED=xpath://nav[@id='primary-nav']/div/ul/li[7]/div/div/table/tbody/tr/td/span[2]/a
+	btn_diamondClarity_ED=xpath://nav[@id='primary-nav']/div/ul/li[7]/div/div/table/tbody/tr/td/span[3]/a
+	btn_diamondCutShapes_ED=xpath://nav[@id='primary-nav']/div/ul/li[7]/div/div/table/tbody/tr/td/span[4]/a
+	btn_cutPerformance_ED=xpath://nav[@id='primary-nav']/div/ul/li[7]/div/div/table/tbody/tr/td/span[5]/a
+btn_heartsAndArrows_ED=xpath://nav[@id='primary-nav']/div/ul/li[7]/div/div/table/tbody/tr[2]/td/a/strong
+btn_visiblePerfection_ED=xpath://nav[@id='primary-nav']/div/ul/li[7]/div/div/table/tbody/tr[2]/td/a[2]/strong
+btn_gallery_ED=xpath://nav[@id='primary-nav']/div/ul/li[7]/div/div/table/tbody/tr[3]/td/a/strong
+btn_videos_ED=xpath://nav[@id='primary-nav']/div/ul/li[7]/div/div/table/tbody/tr[3]/td/a[2]/strong
+
+# Top Navigation Why Us (WU)
+
+#about us
+	btn_ourStory_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr/td/span/a
+	btn_trustAndIntegrity_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr/td/span[2]/a
+	btn_termsAndConditions_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr/td/span[3]/a
+	btn_location_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr/td/span[4]/a
+btn_testimonials_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr[2]/td/a/strong
+btn_videos_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr[2]/td/a[2]/strong
+btn_financing_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr[2]/td/a[3]/strong
+btn_policies_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr/td[2]/a/strong
+	btn_freeShipping_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr/td[2]/span/a
+	btn_upgradePolicy_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr/td[2]/span[2]/a
+	btn_15DayInspectionPeriod_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr/td[2]/span[3]/a
+	btn_buyBackPolicy_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr/td[2]/span[4]/a
+#app available on
+	btn_appStore_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr[2]/td[2]/span/a
+	btn_googlePlay_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div/table/tbody/tr[2]/td[2]/span[2]/a
+btn_weSetTheStandard_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div[2]/table/tbody/tr/td/a/strong
+btn_faq_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div[2]/table/tbody/tr/td/a[2]/strong
+btn_liveChat_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div[2]/table/tbody/tr/td/a[3]/strong
+btn_contactUs_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div[2]/table/tbody/tr/td/a[4]/strong
+#news
+	btn_customJewelry_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div[2]/table/tbody/tr[2]/td/span/a
+	btn_diamondEducation_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div[2]/table/tbody/tr[2]/td/span[2]/a
+	btn_diamondNews_WU=xpath://nav[@id='primary-nav']/div/ul/li[8]/div/div[2]/table/tbody/tr[2]/td/span[3]/a
+
+# Ring Setting Filter (SF)
+
+btn_fil_solitaire_SF=xpath://span[2]/img
+btn_fil_paveSideStones_SF=xpath://li[2]/a/span[2]/img
+btn_fil_threeStone_SF=xpath://li[3]/a/span[2]/img
+btn_fil_haloSettings_SF=xpath://li[4]/a/span[2]/img
+btn_fil_truthCollection_SF=xpath://li[5]/a/span[2]/img
+btn_fil_novelaCollection_SF=xpath://li[6]/a/span[2]/img
+btn_fil_olympusCollection_SF=xpath://li[7]/a/span[2]/img
+btn_fil_legera_SF=xpath://li[8]/a/span[2]/img
+btn_col_brianGavinSignature_SF=xpath://div[2]/div/a
+btn_col_brianGavinSelect_SF=xpath://div[2]/div[2]/a
+btn_col_otherDesigner_SF=xpath://div[2]/div[3]/a
+btn_metTyp_platinum_SF=xpath://div[3]/div/a
+btn_metTyp_18kWhiteGold_SF=xpath://div[3]/div[2]/a
+btn_metTyp_18kRoseGold_SF=xpath://div[3]/div[3]/a
+btn_metTyp_14kRoseGold_SF=xpath://div[4]/a
+btn_metTyp_18kYellowGold_SF=xpath://div[3]/div[5]/a
+btn_metTyp_14kYellowGold_SF=xpath://div[6]/a
+btn_metTyp_palladium_SF=xpath://div[7]/a
+btn_metTyp_14kWhiteGold_SF=xpath://div[8]/a
+txtbx_priceMin_SF=xpath://div[4]/div[2]/input
+txtbx_priceMax_SF=xpath://input[2]
+
+# Earring Setting Filter (ST)
+
+btn_fil_brianGavinSignature_ST=xpath://div[2]/div/div/a
+btn_fil_brianGavinSelect_ST=xpath://div[2]/div/div[2]/a
+btn_fil_otherDesigner_ST=xpath://div[2]/div/div[3]/a
+btn_metTyp_platinum_ST=xpath://div[2]/div/a
+btn_metTyp_18kWhiteGold_ST=xpath://div[2]/div[2]/a
+btn_metTyp_18kRoseGold_ST=xpath://div[2]/div[3]/a
+btn_metTyp_14kRoseGold_ST=xpath://div[4]/a
+btn_metTyp_18kYellowGold_ST=xpath://div[2]/div[5]/a
+btn_metTyp_14kYellowGold_ST=xpath://div[6]/a
+btn_metTyp_14kWhiteGold_ST=xpath://div[7]/a
+txtbx_priceMin_ST=xpath://div[3]/div[2]/input
+txtbx_priceMax_ST=xpath://input[2]
+
+# Setting Search Results (SS)
+
+btn_1_quickInfo_SS=xpath://div[@id='pl-product-list']/div/div/div
+btn_1_selectSetting_SS=xpath://form/div[2]/input
+btn_2_quickInfo_SS=xpath://div[@id='pl-product-list']/div[2]/div/div
+btn_2_selectSetting_SS=xpath://div[2]/div[2]/div[3]/form/div[2]/input
+btn_3_quickInfo_SS=xpath://div[@id='pl-product-list']/div[3]/div/div
+btn_3_selectSetting_SS=xpath://div[3]/div[2]/div[3]/form/div[2]/input
+btn_4_quickInfo_SS=xpath://div[@id='pl-product-list']/div[4]/div/div
+btn_4_selectSetting_SS=xpath://div[4]/div[2]/div[3]/form/div[2]/input
+
+# Setting Pop Up (SP)
+
+btn_close_SP=xpath://div[@id='en-popup-container']/div/div/div/span
+drpdwn_size_SP=xpath://div[@id='select_setting']/div/select
+btn_completeRing_SP=xpath://div[@id='select_diamond']/div/a
+btn_addDiamond_SP=xpath://div[@id='select_setting']/div[2]/input
+btn_buySettingOnly_SP=xpath://div[@id='select']/input
+
+# Earring Diamond Filter (EF)
+
+hvr_round_EF=xpath://img[1]
+btn_round_EF=xpath://img[2]
+hvr_cushion_EF=xpath://li[2]/a/div/img[1]
+btn_cushion_EF=xpath://li[2]/a/div/img[2]
+hvr_princess_EF=xpath://li[3]/a/div/img[1]
+btn_princess_EF=xpath://li[3]/a/div/img[2]
+txtbx_sizeMin_EF=xpath://div[2]/input
+txtbx_sizeMax_EF=xpath://input[2]
+txtbx_priceMin_EF=xpath://div[4]/div[2]/input
+txtbx_priceMax_EF=xpath://div[4]/div[2]/input[2]
+
+# Ring Diamond Filter (DF)
+
+hvr_filDia_signature_DF=xpath://div[@id='signature']/img[1]
+btn_filDia_signature_DF=xpath://div[@id='signature']/img[2]
+hvr_filDia_round_DF=xpath://div[@id='round']/img[1]
+btn_filDia_round_DF=xpath://div[@id='round']/img[2]
+hvr_filDia_cushion_DF=xpath://div[@id='cushion']/img[1]
+btn_filDia_cushion_DF=xpath://div[@id='cushion']/img[2]
+hvr_filDia_princess_DF=xpath://div[@id='cushion']/img[1]
+btn_filDia_princess_DF=xpath://div[@id='cushion']/img[2]
+hvr_filDia_asscher_DF=xpath://div[@id='asscher']/img[1]
+btn_filDia_asscher_DF=xpath://div[@id='asscher']/img[2]
+hvr_filDia_emerald_DF=xpath://div[@id='emerald']/img[1]
+btn_filDia_emerald_DF=xpath://div[@id='emerald']/img[2]
+hvr_filDia_radiant_DF=xpath://div[@id='radiant']/img[1]
+btn_filDia_radiant_DF=xpath://div[@id='radiant']/img[2]
+hvr_filDia_oval_DF=xpath://div[@id='oval']/img[1]
+btn_filDia_oval_DF=xpath://div[@id='oval']/img[2]
+hvr_filDia_pear_DF=xpath://div[@id='pear']/img[1]
+btn_filDia_pear_DF=xpath://div[@id='pear']/img[2]
+hvr_filDia_heart_DF=xpath://div[@id='heart']/img[1]
+btn_filDia_heart_DF=xpath://div[@id='heart']/img[2]
+hvr_filDia_marquise_DF=xpath://div[@id='marquise']/img[1]
+btn_filDia_marquise_DF=xpath://div[@id='marquise']/img[2]
+btn_col_brianGavinSignature_DF=xpath://div[@id='other_diamond']/div/a
+btn_col_brianGavinBlue_DF=xpath://div[@id='other_diamond']/div[2]/a
+btn_col_advanceSelection_DF=xpath://div[@id='other_diamond']/div[3]/a
+btn_col_virtualSelection_DF=xpath://div[@id='other_diamond']/div[4]/a
+btn_col_sig_HARound_DF=xpath://div[@id='signature_diamond']/div/a
+btn_col_sig_HACushion_DF=xpath://div[@id='signature_diamond']/div[2]/a
+btn_col_sig_brianGavinBlue_DF=xpath://div[@id='signature_diamond']/div[3]/a
+btn_col_sig_brianGavinPrincess_DF=xpath://div[@id='signature_diamond']/div[4]/a
+btn_col_sig_advanceSelection_DF=xpath://div[@id='signature_diamond']/div[5]/a
+txtbx_sizeMin_DF=xpath://div[@id='sizeVal']/input
+txtbx_sizeMax_DF=xpath://div[@id='sizeVal']/input[2]
+txtbx_priceMin_DF=xpath://div[@id='priceVal']/input
+txtbx_priceMax_DF=xpath://div[@id='priceVal']/input[2]
+
+# Diamond Search Results (DS)
+
+btn_1_quickInfo_DS=xpath://td[12]/span
+btn_1_closeQuickInfo_DS=xpath://td/div/div/a/span
+btn_1_selectDiamond_DS=xpath://input[4]
+btn_2_quickInfo_DS=xpath://tr[3]/td[12]/span
+btn_2_closeQuickInfo_DS=xpath://tr[4]/td/div/div/a/span
+btn_2_selectDiamond_DS=xpath://tr[4]/td/div/div[4]/form/input[4]
+btn_3_quickInfo_DS=xpath://tr[5]/td[12]/span
+btn_3_closeQuickInfo_DS=xpath://tr[6]/td/div/div/a/span
+btn_3_selectDiamond_DS=xpath://tr[6]/td/div/div[4]/form/input[4]
+btn_4_quickInfo_DS=xpath://tr[7]/td[12]/span
+btn_4_closeQuickInfo_DS=xpath://tr[8]/td/div/div/a/span
+btn_4_selectDiamond_DS=xpath://tr[8]/td/div/div[4]/form/input[4]
+
+# Diamond Pop Up (DP)
+
+btn_close_DP=xpath://div[@id='en-popup-container']/div/div/div/span
+btn_chooseSetting_DP=xpath://div[@id='select_diamond']/div/a
+btn_addDiamonds_DP=xpath://div[@id='select_diamond']/div/a
+btn_buyDiamondOnly_DP=xpath://div[@id='select_diamond']/div[2]/a
+btn_completeRing_DP=xpath://div[@id='select_diamond']/div/a
+
+# Purchase Your Product (PP)
+
+btn_1_addToCart_PP=xpath://div[@id='wrapper']/div[6]/div/a/span[2]
+btn_2_addToCart_PP=xpath://div[@id='wrapper']/div[8]/div[3]/a/span[2]
+btn_1_view_PP=xpath://div[@id='wrapper']/div[6]/div[2]/div[2]/div[2]/a
+btn_1_change_PP=xpath://div[@id='wrapper']/div[6]/div[2]/div[2]/div[3]/a
+btn_1_remove_PP=xpath://div[@id='wrapper']/div[8]/div[3]/a/span[2]
+btn_2_view_PP=xpath://div[@id='wrapper']/div[6]/div[3]/div[2]/div/a
+btn_2_change_PP=xpath://div[@id='wrapper']/div[6]/div[3]/div[2]/div/div/a
+btn_2_remove_PP=xpath://div[@id='wrapper']/div[6]/div[3]/div[2]/div/a[2]
+
+
+# Shopping Cart (SC)
+
+btn_1_continueShopping_SC=xpath://div[@id='eqcol1']/div/a
+btn_2_continueShopping_SC=xpath://div[@id='eqcol1']/div[4]/a
+btn_1_remove_SC=xpath://div[@id='eqcol1']/div[2]/div/div[2]/div[5]/a/span
+btn_1_checkOut_SC=xpath://div[@id='eqcol1']/div/div/a[2]
+btn_2_checkOut_SC=xpath://div[@id='eqcol1']/div[4]/div/a[2]
+
+# Register Check Out (RC)
+
+txtbx_email_RC=xpath://div[@id='wrapper']/div[4]/div/form/div[4]/input
+txtbx_password_RC=xpath://div[@id='wrapper']/div[4]/div/form/div[5]/div/input
+btn_signIn_RC=xpath://div[@id='wrapper']/div[4]/div/form/div[5]/div[3]/div/label/input
+btn_forgotPassword_RC=xpath://div[@id='wrapper']/div[4]/div/form/div[5]/div[3]/div/label/input
+	btn_forPas_email_RC=xpath://form[@id='CustomerForgotPasswordForm']/div[2]/div[2]/input
+	btn_forPas_submit_RC=xpath://form[@id='CustomerForgotPasswordForm']/div[2]/label/div/input
+btn_createAnAccount_RC=xpath://div[@id='wrapper']/div[4]/div/form/div[5]/div[3]/div[2]/label/a
+btn_continueToCheckout_RC=xpath://div[@id='wrapper']/div[4]/div[2]/div[3]/label/a
+
+# Guest Shipping (GS)
+
+txtbx_emailAddress_GS=xpath://form[@id='ShippingForm']/div[2]/ul/li/input
+rBtn_offersAndPromos_GS=xpath://form[@id='ShippingForm']/div[2]/ul/li[2]/div/input
+txtbx_firstName_GS=xpath://form[@id='ShippingForm']/div[3]/ul/li/div/input
+txtbx_lastName_GS=xpath://form[@id='ShippingForm']/div[3]/ul/li/div[2]/input
+txtbx_address_GS=xpath://form[@id='ShippingForm']/div[3]/ul/li[2]/input
+txtbx_city_GS=xpath://form[@id='ShippingForm']/div[3]/ul/li[3]/input
+drpdwn_state_GS=xpath://form[@id='ShippingForm']/div[3]/ul[2]/li/div/select
+txtbx_zip_GS=xpath://form[@id='ShippingForm']/div[3]/ul[2]/li/div[2]/input
+drpdwn_country_GS=xpath://form[@id='ShippingForm']/div[3]/ul[2]/li[2]/select
+txtbx_phone_GS=xpath://form[@id='ShippingForm']/div[3]/ul[2]/li[3]/div/input
+drpdwn_deliveryOptions_GS=name:data[CartShippingAddress][delivery]
+btn_back_GS=xpath://form[@id='ShippingForm']/div[5]/div[2]/a
+btn_continue_GS=xpath://form[@id='ShippingForm']/div[5]/div[3]/div/input
+
+# Guest Payment (GP)
+
+btn_creditCard_GP=xpath://div[@id='payment_types']/a
+btn_bankWire_GP=xpath://div[@id='payment_types']/a[2]
+btn_payPal_GP=xpath://div[@id='payment_types']/a[3]
+btn_payByCheck_GP=xpath://div[@id='payment_types']/a[4]
+btn_getFinancing_GP=xpath://div[@id='payment_types']/a[5]
+rBtn_visa_GP=xpath://div[@id='wrapper']/form/div[2]/div[2]/div[2]/div/div/input
+rBtn_americanExpress_GP=xpath://div[@id='wrapper']/form/div[2]/div[2]/div[2]/div/div/input[2]
+rBtn_masterCard_GP=xpath://div[@id='wrapper']/form/div[2]/div[2]/div[2]/div/div/input[3]
+rBtn_discover_GP=xpath://div[@id='wrapper']/form/div[2]/div[2]/div[2]/div/div/input[4]
+txtbx_creditCardNum_GP=xpath://div[@id='wrapper']/form/div[2]/div[2]/div[2]/div/ul/li/div/input
+txtbx_name_GP=xpath://div[@id='wrapper']/form/div[2]/div[2]/div[2]/div/ul/li[2]/div/input
+drpdwn_expMonth_GP=xpath://div[@id='wrapper']/form/div[2]/div[2]/div[2]/div/ul[2]/li/div/select
+drpdwn_expYear_GP=xpath://div[@id='wrapper']/form/div[2]/div[2]/div[2]/div/ul[2]/li/div[2]/select
+txtbx_CVV_GP=xpath://div[@id='wrapper']/form/div[2]/div[2]/div[2]/div/ul[2]/li[2]/div/input
+rBtn_sameAsShipping_GP=xpath://div[@id='billing_info']/div/div/input[2]
+txtbx_address1_GP=xpath://div[@id='billing_info']/div/ul/li/input
+txtbx_address2_GP=xpath://div[@id='billing_info']/div/ul/li[2]/input
+txtbx_city_GP=xpath://div[@id='billing_info']/div/ul/li[3]/input
+drpdwn_state_GP=xpath://div[@id='billing_info']/div/ul[2]/li/div/select
+txtbx_zip_GP=xpath://div[@id='billing_info']/div/ul[2]/li/div[2]/input
+drpdwn_country_GP=xpath://div[@id='billing_info']/div/ul[2]/li[2]/select
+txtbx_phone_GP=xpath://div[@id='billing_info']/div/ul[2]/li[3]/div/input
+btn_back_GP=xpath://div[@id='wrapper']/form/div[4]/div[2]/a
+btn_continue_GP=xpath://div[@id='wrapper']/form/div[4]/div[3]/div/input
+
+# Guest Review (GR)
+
+btn_1_confirmOrder_GR=xpath://div[@id='wrapper']/div[4]/div[2]/a
+btn_2_confirmOrder_GR=xpath://div[@id='wrapper']/div[7]/div[2]/a
