@@ -93,40 +93,7 @@ public class DriverScript {
     	}
 		System.out.println("completed");
     }
-    
-   /* private void execute_TestCase() throws Exception {
-    	int iTotalTestCases = ExcelUtils.getRowCount(Constants.Sheet_TestCases);
-    	outerloop:
-		for(int iTestcase=1;iTestcase<iTotalTestCases;iTestcase++){
-			bResult = true;
-			sTestCaseID = ExcelUtils.getCellData(iTestcase, Constants.Col_TestCaseID, Constants.Sheet_TestCases); 
-			sRunMode = ExcelUtils.getCellData(iTestcase, Constants.Col_RunMode,Constants.Sheet_TestCases);
-			if (sRunMode.equals("Yes")){
-				Log.startTestCase(sTestCaseID);
-				iTestStep = ExcelUtils.getRowContains(sTestCaseID, Constants.Col_TestCaseID, Constants.Sheet_TestSteps);
-				iTestLastStep = ExcelUtils.getTestStepsCount(Constants.Sheet_TestSteps, sTestCaseID, iTestStep);
-				bResult=true;
-				for (;iTestStep<iTestLastStep;iTestStep++){
-		    		sActionKeyword = ExcelUtils.getCellData(iTestStep, Constants.Col_ActionKeyword,Constants.Sheet_TestSteps);
-		    		sPageObject = ExcelUtils.getCellData(iTestStep, Constants.Col_PageObject, Constants.Sheet_TestSteps);
-		    		sData = ExcelUtils.getCellData(iTestStep, Constants.Col_DataSet, Constants.Sheet_TestSteps);
-		    		execute_Actions();
-					if(bResult==false){
-						ExcelUtils.setCellData(Constants.KEYWORD_FAIL,iTestcase,Constants.Col_Result,Constants.Sheet_TestCases);
-						Log.endTestCase(sTestCaseID);
-						System.out.println("failed");
-						//breaking the outerloop will end the entire test suite!
-						break outerloop;
-						}						
-					}
-				if(bResult==true){
-				ExcelUtils.setCellData(Constants.KEYWORD_PASS,iTestcase,Constants.Col_Result,Constants.Sheet_TestCases);
-				Log.endTestCase(sTestCaseID);	
-					}					
-				}
-			}
-		System.out.println("completed");
-		}	*/
+
      
      private static void execute_Actions() throws Exception {
 	
