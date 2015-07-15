@@ -1,6 +1,5 @@
 package config;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import static executionEngine.DriverScript.OR;
@@ -32,14 +31,12 @@ public class ActionKeywords {
 				Log.info("Mozilla browser started");				
 				}
 			else if(data.equals("IE")){
-				File file = new File(System.getProperty("user.dir") + Constants.Path_IE);
-				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+				System.setProperty("webdriver.ie.driver", Constants.Path_IE);
 				driver=new InternetExplorerDriver();
 				Log.info("IE browser started");
 				}
 			else if(data.equals("Chrome")){
-				File file = new File(System.getProperty("user.dir") + Constants.Path_Chrome);
-				System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+				System.setProperty("webdriver.chrome.driver", Constants.Path_Chrome);
 				driver=new ChromeDriver();
 				Log.info("Chrome browser started");
 				}
