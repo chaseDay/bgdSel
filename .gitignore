@@ -1,5 +1,6 @@
 #ignore metadata
 .metadata/**
+#ignore recommenders
 .recommenders/**
 
 # Windows image file caches
