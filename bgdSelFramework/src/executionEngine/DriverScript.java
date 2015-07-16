@@ -1,15 +1,20 @@
 package executionEngine;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.lang.reflect.Method;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
-import org.apache.log4j.xml.DOMConfigurator;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 import config.ActionKeywords;
 import config.Constants;
 import utility.ExcelUtils;
-import utility.Log;
  
 public class DriverScript {
 	
@@ -31,6 +36,9 @@ public class DriverScript {
 	public static String sData;
 	public static boolean bResult;
 	
+	private static ExtentReports extent;
+	public static ExtentTest eTest;
+	
 	
 	public DriverScript() throws NoSuchMethodException, SecurityException{
 		actionKeywords = new ActionKeywords();
@@ -40,7 +48,7 @@ public class DriverScript {
     public static void main(String[] args) throws Exception {
     	System.out.println("started");
     	ExcelUtils.setExcelFile(Constants.Path_TestData);
-    	DOMConfigurator.configure("log4j.xml");
+    	//DOMConfigurator.configure("log4j.xml");
     	String Path_OR = Constants.Path_OR;
 		FileInputStream fs = new FileInputStream(Path_OR);
 		OR= new Properties(System.getProperties());
@@ -52,6 +60,18 @@ public class DriverScript {
     }
 		
     private void execute_TestCase() throws Exception {
+    	
+    	//create date format to attach to end of html file name
+    	DateFormat df = new SimpleDateFormat("ddMMyyHHmm");
+    	Date dateobj = new Date();
+    	//name file eReport + date + time + .html
+    	File createHtml = new File(Constants.Path_ExtentReports+"//eReport"+df.format(dateobj)+".html");
+    	createHtml.createNewFile();
+    	extent = new ExtentReports(Constants.Path_ExtentReports+"//"+createHtml.getName(), true);
+    	extent.config()
+        .documentTitle("BGD Automation Report")
+        .reportName("BGD Automation Report");
+
     	int iTotalExecutions = ExcelUtils.getRowCount(Constants.Sheet_Execution);
     	iExecution = 1;
     	outerloop:
@@ -60,14 +80,13 @@ public class DriverScript {
     		sTestSuiteID = ExcelUtils.getCellData(iExecution, Constants.Col_ExecutionID, Constants.Sheet_Execution); 
 			sRunMode = ExcelUtils.getCellData(iExecution, Constants.Col_RunMode,Constants.Sheet_Execution);
 			if (sRunMode.equals("Yes")){
-				Log.startTestSuite(sTestSuiteID);
 				iTestSuiteCol = ExcelUtils.getColContains(sTestSuiteID, Constants.Row_TestSuiteID, Constants.Sheet_TestSuites);
 				iTestLastSuite = ExcelUtils.getTestCasesCount(Constants.Sheet_TestSuites, sTestSuiteID, iTestSuiteCol);
 				iSuiteRow = 1;
 				bResult=true;
 				for (;iSuiteRow<iTestLastSuite;iSuiteRow++){
 					sTestCaseID = ExcelUtils.getCellData(iSuiteRow, iTestSuiteCol, Constants.Sheet_TestSuites); 
-					Log.startTestCase(sTestCaseID);
+					eTest = extent.startTest(sTestCaseID, "");
 					iTestStep = ExcelUtils.getRowContains(sTestCaseID, Constants.Col_TestCaseID, Constants.Sheet_TestSteps);
 					iTestLastStep = ExcelUtils.getTestStepsCount(Constants.Sheet_TestSteps, sTestCaseID, iTestStep);
 					bResult=true;
@@ -78,7 +97,6 @@ public class DriverScript {
 			    		execute_Actions();
 						if(bResult==false){
 							ExcelUtils.setCellData(Constants.KEYWORD_FAIL,iExecution,Constants.Col_ExecutionResult,Constants.Sheet_Execution);
-							Log.endTestCase(sTestCaseID);
 							System.out.println("failed");
 							//breaking the outerloop will end the entire test suite!
 							break outerloop;
@@ -86,11 +104,13 @@ public class DriverScript {
 					}
 					if(bResult==true){
 					ExcelUtils.setCellData(Constants.KEYWORD_PASS,iExecution,Constants.Col_ExecutionResult,Constants.Sheet_Execution);
-					Log.endTestCase(sTestCaseID);	
+					eTest.log(LogStatus.PASS, "Pass");
+					extent.endTest(eTest);
 					}					
 				}
 			}
     	}
+    	extent.flush();
 		System.out.println("completed");
     }
 

@@ -8,6 +8,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import config.Constants;
 import executionEngine.DriverScript;
     public class ExcelUtils {
@@ -22,7 +24,7 @@ import executionEngine.DriverScript;
                     FileInputStream ExcelFile = new FileInputStream(Path);
                     ExcelWBook = new XSSFWorkbook(ExcelFile);
             	} catch (Exception e){
-            		Log.error("Class Utils | Method setExcelFile | Exception desc : "+e.getMessage());
+            		DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method setExcelFile | Exception desc : "+e.getMessage());
             		DriverScript.bResult = false;
                 	}
             	}
@@ -41,7 +43,7 @@ import executionEngine.DriverScript;
          				//empty cell
          			 }
          			 else{
-         				Log.error("Class Utils | Method getCellData | Exception desc : "+e.getMessage());
+         				DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getCellData | Exception desc : "+e.getMessage());
          			 }
                      DriverScript.bResult = false;
                      return"";
@@ -59,7 +61,7 @@ import executionEngine.DriverScript;
         				//empty cell
          			}
          			else{
-         				 Log.error("Class Utils | Method getRowCount | Exception desc : "+e.getMessage());
+         				DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getRowCount | Exception desc : "+e.getMessage());
          			}
         			DriverScript.bResult = false;
         			}
@@ -77,7 +79,7 @@ import executionEngine.DriverScript;
 						}
 					}
 				} catch (Exception e){
-					Log.error("Class Utils | Method getColContains | Exception desc : "+e.getMessage());
+					DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getColContains | Exception desc : "+e.getMessage());
 					DriverScript.bResult = false;
 				}
 				return iColNum;
@@ -99,7 +101,7 @@ import executionEngine.DriverScript;
         				//empty cell
          			}
          			else{
-         				Log.error("Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
+         				DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
          			}
         			DriverScript.bResult = false;
         			}
@@ -121,7 +123,7 @@ import executionEngine.DriverScript;
 	        		int number=ExcelWSheet.getLastRowNum()+1;
 	        		return number;
         		} catch (Exception e){
-        			Log.error("Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
+        			DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
         			DriverScript.bResult = false;
         			return 0;
 				}
@@ -140,7 +142,7 @@ import executionEngine.DriverScript;
 	        		int number=ExcelWSheet.getLastRowNum()+1;
 	        		return number;
         		} catch (Exception e){
-        			Log.error("Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
+        			DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
         			DriverScript.bResult = false;
         			return 0;
                 }
