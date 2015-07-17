@@ -1,10 +1,14 @@
 package config;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import static executionEngine.DriverScript.OR;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,7 +52,7 @@ public class ActionKeywords {
 			//maximize browser
 			driver.manage().window().maximize();
 		}catch (Exception e){
-			DriverScript.eTest.log(LogStatus.ERROR, "Not able to open the Browser --- " + e.getMessage());
+			DriverScript.eTest.log(LogStatus.FAIL, "Not able to open the Browser --- " + e.getMessage());
 			DriverScript.bResult = false;
 		}
 	}
@@ -59,7 +63,7 @@ public class ActionKeywords {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.get(data);
 		}catch(Exception e){
-			DriverScript.eTest.log(LogStatus.ERROR, "Not able to navigate --- " + e.getMessage());
+			DriverScript.eTest.log(LogStatus.FAIL, "Not able to navigate --- " + e.getMessage());
 			DriverScript.bResult = false;
 			}
 		}
@@ -69,7 +73,7 @@ public class ActionKeywords {
 			DriverScript.eTest.log(LogStatus.INFO, "Clicking on web element " + object);
 			driver.findElement(getLocator(OR.getProperty(object))).click();
 		 }catch(Exception e){
-			DriverScript.eTest.log(LogStatus.ERROR, "Not able to click --- " + e.getMessage());
+			DriverScript.eTest.log(LogStatus.FAIL, "Not able to click --- " + e.getMessage());
  			DriverScript.bResult = false;
          	}
 		}
@@ -80,7 +84,7 @@ public class ActionKeywords {
 			driver.findElement(getLocator(OR.getProperty(object))).clear();
 			driver.findElement(getLocator(OR.getProperty(object))).sendKeys(data);
 		 }catch(Exception e){
-			 DriverScript.eTest.log(LogStatus.ERROR, "Not able to Enter Data --- " + e.getMessage());
+			 DriverScript.eTest.log(LogStatus.FAIL, "Not able to Enter Data --- " + e.getMessage());
 			 DriverScript.bResult = false;
 		 	}
 		}
@@ -90,21 +94,21 @@ public class ActionKeywords {
 			DriverScript.eTest.log(LogStatus.INFO, "Verifying the object " + object + " contains the text " + data);
 			Assert.assertEquals(driver.findElement(getLocator(OR.getProperty(object))).getText(),data);
 		}catch(AssertionError e){
-			DriverScript.eTest.log(LogStatus.ERROR, "Unable to verify text --- " + e.getMessage());
+			DriverScript.eTest.log(LogStatus.FAIL, "Unable to verify text --- " + e.getMessage());
 			DriverScript.bResult = false;
 		}catch(Exception e){
-			DriverScript.eTest.log(LogStatus.ERROR, "Unable to verify text --- " + e.getMessage());
+			DriverScript.eTest.log(LogStatus.FAIL, "Unable to verify text --- " + e.getMessage());
 			DriverScript.bResult = false;
 		}
 	}
 	
-	public static void dropDownSelect(String object, String data){
+	public static void dropDownSelect(String object, String data) throws InterruptedException{
 		try{
 			DriverScript.eTest.log(LogStatus.INFO, "Selecting the value " + data + " from the drop down " + object);
 			Select droplist = new Select(driver.findElement(getLocator(OR.getProperty(object))));
 			droplist.selectByVisibleText(data);
 		}catch(Exception e){
-			DriverScript.eTest.log(LogStatus.ERROR, "Not able to select the value " + data + " from the drop down " + object + " --- " + e.getMessage());
+			DriverScript.eTest.log(LogStatus.FAIL, "Not able to select the value " + data + " from the drop down " + object + " --- " + e.getMessage());
 			DriverScript.bResult = false;
 		}
 	}
@@ -117,7 +121,7 @@ public class ActionKeywords {
 			actions.moveToElement(hoverObject).perform();
 		}
 		catch(Exception e){
-			DriverScript.eTest.log(LogStatus.ERROR, "Not able to hover" + object + " --- " + e.getMessage());
+			DriverScript.eTest.log(LogStatus.FAIL, "Not able to hover" + object + " --- " + e.getMessage());
 			DriverScript.bResult = false;
 		}
 	}
@@ -129,7 +133,7 @@ public class ActionKeywords {
 			Thread.sleep(5000);
 		}
 		catch(Exception e){
-			DriverScript.eTest.log(LogStatus.ERROR, "Not able to clear cache --- " + e.getMessage());
+			DriverScript.eTest.log(LogStatus.FAIL, "Not able to clear cache --- " + e.getMessage());
 			DriverScript.bResult = false;
 		}
 	}
@@ -140,7 +144,7 @@ public class ActionKeywords {
 			DriverScript.eTest.log(LogStatus.INFO, "Wait for 5 seconds");
 			Thread.sleep(5000);
 		 }catch(Exception e){
-			 DriverScript.eTest.log(LogStatus.ERROR, "Not able to Wait --- " + e.getMessage());
+			 DriverScript.eTest.log(LogStatus.FAIL, "Not able to Wait --- " + e.getMessage());
 			 DriverScript.bResult = false;
          	}
 		}
@@ -150,10 +154,23 @@ public class ActionKeywords {
 			DriverScript.eTest.log(LogStatus.INFO, "Closing the browser");
 			driver.quit();
 		 }catch(Exception e){
-			 DriverScript.eTest.log(LogStatus.ERROR, "Not able to Close the Browser --- " + e.getMessage());
+			 DriverScript.eTest.log(LogStatus.FAIL, "Not able to Close the Browser --- " + e.getMessage());
 			 DriverScript.bResult = false;
          	}
 		}
+	
+	public static String takeScreenshot (String tagName){
+		String screenshotName = null;
+		try{
+			File scrnshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			//create relative path so image can be attached on other devices
+			screenshotName = "./screenshots/screenshot"+tagName+".png";
+			FileUtils.copyFile(scrnshot, new File(DriverScript.reportFolder.getAbsolutePath()+"/screenshots/screenshot"+tagName+".png"));
+		}catch(Exception e){
+			System.out.println("screenshot failure : "+e.getMessage());
+		}
+		return screenshotName;
+	}
 	
 	
 	//Separate element type and locator from OR	

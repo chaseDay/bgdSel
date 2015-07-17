@@ -38,6 +38,9 @@ public class DriverScript {
 	
 	private static ExtentReports extent;
 	public static ExtentTest eTest;
+	public static String reportTag;
+	public static File reportFolder;
+	public static int ssCount = 1;
 	
 	
 	public DriverScript() throws NoSuchMethodException, SecurityException{
@@ -61,16 +64,7 @@ public class DriverScript {
 		
     private void execute_TestCase() throws Exception {
     	
-    	//create date format to attach to end of html file name
-    	DateFormat df = new SimpleDateFormat("ddMMyyHHmm");
-    	Date dateobj = new Date();
-    	//name file eReport + date + time + .html
-    	File createHtml = new File(Constants.Path_ExtentReports+"//eReport"+df.format(dateobj)+".html");
-    	createHtml.createNewFile();
-    	extent = new ExtentReports(Constants.Path_ExtentReports+"//"+createHtml.getName(), true);
-    	extent.config()
-        .documentTitle("BGD Automation Report")
-        .reportName("BGD Automation Report");
+    	extentReportSetup();
 
     	int iTotalExecutions = ExcelUtils.getRowCount(Constants.Sheet_Execution);
     	iExecution = 1;
@@ -96,8 +90,9 @@ public class DriverScript {
 			    		sData = ExcelUtils.getCellData(iTestStep, Constants.Col_DataSet, Constants.Sheet_TestSteps);
 			    		execute_Actions();
 						if(bResult==false){
-							ExcelUtils.setCellData(Constants.KEYWORD_FAIL,iExecution,Constants.Col_ExecutionResult,Constants.Sheet_Execution);
-							System.out.println("failed");
+							ExcelUtils.setCellData(Constants.KEYWORD_FAIL,iExecution,Constants.Col_ExecutionResult,Constants.Sheet_Execution);				
+							extent.endTest(eTest);
+							System.out.println("failed");							
 							//breaking the outerloop will end the entire test suite!
 							break outerloop;
 						}						
@@ -113,6 +108,35 @@ public class DriverScript {
     	extent.flush();
 		System.out.println("completed");
     }
+    
+    private void extentReportSetup() throws Exception{
+    	DateFormat df = new SimpleDateFormat("MMddyyHHmm");
+    	Date dateobj = new Date();
+    	//create date format to attach to attach to the end of the html file name
+    	reportTag = df.format(dateobj);
+    	//create report folder
+    	boolean rfSuccess = new File(Constants.Path_ExtentReports+"/eReport"+reportTag).mkdirs();
+    		if(rfSuccess){
+    			reportFolder = new File (Constants.Path_ExtentReports+"/eReport"+reportTag);
+    		}
+    		else{
+    			System.out.println("failed to create report folder");
+    		}
+    	boolean rsSuccess = new File(reportFolder.getAbsolutePath()+"/screenshots").mkdirs();
+    		if(rsSuccess){
+    			//success
+    		}
+    		else{
+    			System.out.println("failed to create screenshot folder");
+    		}
+    	//name file eReport + date + time + .html
+    	File createHtml = new File(reportFolder.getAbsolutePath()+"//html"+reportTag+".html");
+    	createHtml.createNewFile();
+    	extent = new ExtentReports(reportFolder.getAbsolutePath()+"//"+createHtml.getName(), true);
+    	extent.config()
+        .documentTitle("BGD Automation Report")
+        .reportName("BGD Automation Report");
+    }
 
      
      private static void execute_Actions() throws Exception {
@@ -126,6 +150,9 @@ public class DriverScript {
 					break;
 				}else{
 					ExcelUtils.setCellData(Constants.KEYWORD_FAIL, iTestStep, Constants.Col_TestStepResult, Constants.Sheet_TestSteps);
+					//take a screenshot and add the same tag used for the report
+					eTest.log(LogStatus.INFO, "Snapshot below: " + eTest.addScreenCapture(ActionKeywords.takeScreenshot(Integer.toString(ssCount))));
+					ssCount++;
 					ActionKeywords.closeBrowser("","");
 					break;
 					}
