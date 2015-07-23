@@ -8,6 +8,7 @@ public class Constants {
 	public static final String Path_OR = System.getProperty("user.dir") + "//src//config//OR.txt";
 	public static final String Path_IE = System.getProperty("user.dir") + "//drivers//IEDriverServer.exe";
 	public static final String Path_Chrome = System.getProperty("user.dir") + "//drivers//chromedriver.exe";
+	public static final String Path_ExtentReports = System.getProperty("user.dir") + "//extentReports";
 	public static final String File_TestData = "DataEngine.xlsx";
 	public static final String KEYWORD_FAIL = "FAIL";
 	public static final String KEYWORD_PASS = "PASS";
