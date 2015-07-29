@@ -12,24 +12,29 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import config.Constants;
 import executionEngine.DriverScript;
+
     public class ExcelUtils {
-                private static XSSFSheet ExcelWSheet;
-                private static XSSFWorkbook ExcelWBook;
-                private static org.apache.poi.ss.usermodel.Cell Cell;
-                private static XSSFRow Row;
-                //private static XSSFRow Row;
-           
-            public static void setExcelFile(String Path) throws Exception {
+                private XSSFSheet ExcelWSheet;
+                private XSSFWorkbook ExcelWBook;
+                private org.apache.poi.ss.usermodel.Cell Cell;
+                private XSSFRow Row;
+                public DriverScript thisThread;
+                
+                
+            public void setExcelFile(String Path) throws Exception {
             	try {
                     FileInputStream ExcelFile = new FileInputStream(Path);
                     ExcelWBook = new XSSFWorkbook(ExcelFile);
             	} catch (Exception e){
-            		DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method setExcelFile | Exception desc : "+e.getMessage());
-            		DriverScript.bResult = false;
-                	}
-            	}
+            		if(thisThread != null){
+	            		thisThread.eTest.log(LogStatus.ERROR,"Class Utils | Method setExcelFile | Exception desc : "+e.getMessage());
+	            		System.out.println("Class Utils | Method setExcelFile | Exception desc : "+e.getMessage());
+	            		thisThread.bResult = false;
+            		}
+                }
+            }
             
-			public static String getCellData(int RowNum, int ColNum, String SheetName ) throws Exception{
+			public String getCellData(int RowNum, int ColNum, String SheetName ) throws Exception{
                 try{
                 	ExcelWSheet = ExcelWBook.getSheet(SheetName);
                    	Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
@@ -43,15 +48,17 @@ import executionEngine.DriverScript;
          				//empty cell
          			 }
          			 else{
-         				DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getCellData | Exception desc : "+e.getMessage());
+         				System.out.println("Class Utils | Method getCellData | Exception desc : "+e.getMessage());
          			 }
-                     DriverScript.bResult = false;
+                	 	if(thisThread != null){
+                	 			thisThread.bResult = false;
+                	 	}
                      return"";
                      }
                  }
             
         	
-			public static int getRowCount(String SheetName){
+			public int getRowCount(String SheetName){
         		int iNumber=0;
         		try {
         			ExcelWSheet = ExcelWBook.getSheet(SheetName);
@@ -61,38 +68,38 @@ import executionEngine.DriverScript;
         				//empty cell
          			}
          			else{
-         				DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getRowCount | Exception desc : "+e.getMessage());
-         			}
-        			DriverScript.bResult = false;
+         				System.out.println("Class Utils | Method getRowCount | Exception desc : "+e.getMessage());
+         			} 
+        			thisThread.bResult = false;
         			}
         		return iNumber;
         		}
 			
 			
-			public static int getColContains(String caseName, int rowNum, String SheetName) throws Exception{
+			public int getColContains(String caseName, int rowNum, String SheetName) throws Exception{
 				int iColNum=0;
 				try {
 					int colCount = 50;
 					for(;iColNum<colCount; iColNum++){
-						if(ExcelUtils.getCellData(rowNum, iColNum, SheetName).equalsIgnoreCase(caseName)){
+						if(getCellData(rowNum, iColNum, SheetName).equalsIgnoreCase(caseName)){
 							break;
 						}
 					}
 				} catch (Exception e){
-					DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getColContains | Exception desc : "+e.getMessage());
-					DriverScript.bResult = false;
+					System.out.println("Class Utils | Method getColContains | Exception desc : "+e.getMessage());
+					thisThread.bResult = false;
 				}
 				return iColNum;
 			}
 			
 			
-			public static int getRowContains(String sTestCaseName, int colNum,String SheetName) throws Exception{
+			public int getRowContains(String sTestCaseName, int colNum,String SheetName) throws Exception{
         		int iRowNum=0;	
         		try {
         		    //ExcelWSheet = ExcelWBook.getSheet(SheetName);
-        			int rowCount = ExcelUtils.getRowCount(SheetName);
+        			int rowCount = getRowCount(SheetName);
         			for (; iRowNum<rowCount; iRowNum++){
-        				if  (ExcelUtils.getCellData(iRowNum,colNum,SheetName).equalsIgnoreCase(sTestCaseName)){
+        				if  (getCellData(iRowNum,colNum,SheetName).equalsIgnoreCase(sTestCaseName)){
         					break;
         				}
         			}       			
@@ -101,18 +108,19 @@ import executionEngine.DriverScript;
         				//empty cell
          			}
          			else{
-         				DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
+         				
          			}
-        			DriverScript.bResult = false;
+        			System.out.println("Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
+        			thisThread.bResult = false;
         			}
         		return iRowNum;
         		}
         	
 			
-			public static int getTestCasesCount(String SheetName, String sTestSuiteID, int colNum) throws Exception{
+			public int getTestCasesCount(String SheetName, String sTestSuiteID, int colNum) throws Exception{
 				try {
 					ExcelWSheet = ExcelWBook.getSheet(SheetName);
-					for(int i = 1;i<ExcelUtils.getRowCount(SheetName);i++){
+					for(int i = 1;i<getRowCount(SheetName);i++){
 						Cell = ExcelWSheet.getRow(i).getCell(colNum);
 						//blank cells are sometimes recognized as cell_type_string so we check for a string length of 0 for a blank cell
 						if(Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_BLANK || Cell.getStringCellValue().length() == 0){
@@ -123,17 +131,17 @@ import executionEngine.DriverScript;
 	        		int number=ExcelWSheet.getLastRowNum()+1;
 	        		return number;
         		} catch (Exception e){
-        			DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
-        			DriverScript.bResult = false;
+        			System.out.println("Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
+        			thisThread.bResult = false;
         			return 0;
 				}
 			}
 			
 			
-			public static int getTestStepsCount(String SheetName, String sTestCaseID, int iTestCaseStart) throws Exception{
+			public int getTestStepsCount(String SheetName, String sTestCaseID, int iTestCaseStart) throws Exception{
         		try {
-	        		for(int i=iTestCaseStart;i<=ExcelUtils.getRowCount(SheetName);i++){
-	        			if(!sTestCaseID.equals(ExcelUtils.getCellData(i, Constants.Col_TestCaseID, SheetName))){
+	        		for(int i=iTestCaseStart;i<=getRowCount(SheetName);i++){
+	        			if(!sTestCaseID.equals(getCellData(i, Constants.Col_TestCaseID, SheetName))){
 	        				int number = i;
 	        				return number;      				
 	        				}
@@ -142,13 +150,13 @@ import executionEngine.DriverScript;
 	        		int number=ExcelWSheet.getLastRowNum()+1;
 	        		return number;
         		} catch (Exception e){
-        			DriverScript.eTest.log(LogStatus.ERROR,"Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
-        			DriverScript.bResult = false;
+        			System.out.println("Class Utils | Method getRowContains | Exception desc : "+e.getMessage());
+        			thisThread.bResult = false;
         			return 0;
                 }
         	}
         	
-        	public static void setCellData(String Result,  int RowNum, int ColNum, String SheetName) throws Exception    {
+        	public void setCellData(String Result,  int RowNum, int ColNum, String SheetName) throws Exception    {
                    try{
                 	   
                 	   ExcelWSheet = ExcelWBook.getSheet(SheetName);
@@ -173,7 +181,8 @@ import executionEngine.DriverScript;
                          fileOut.close();
                          ExcelWBook = new XSSFWorkbook(new FileInputStream(Constants.Path_TestData));
                      }catch(Exception e){
-                    	 DriverScript.bResult = false;
+                    	 System.out.println("Class Utils | Method setCellData | Exception desc : "+e.getMessage());
+                    	 thisThread.bResult = false;
               
                      }
                 }
