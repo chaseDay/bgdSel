@@ -2,7 +2,6 @@ package executionEngine;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
@@ -61,30 +60,24 @@ public class DriverScript extends Thread{
     	try {
 			thisExcelUtils.setExcelFile(Constants.Path_TestData);
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("initial set excel file error : "+e.getMessage());
 		}
     	
     	String Path_OR = Constants.Path_OR;
 		FileInputStream fs = null;
-		
-		try {
-			fs = new FileInputStream(Path_OR);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		
 		OR= new Properties(System.getProperties());
 		
 		try {
+			fs = new FileInputStream(Path_OR);
 			OR.load(fs);
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("OR load error : "+e.getMessage());
 		}
 		
 		try {
 			execute_TestCase();
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 		
     }
@@ -118,8 +111,8 @@ public class DriverScript extends Thread{
 			    		execute_Actions();
 						if(bResult==false){
 							extent.endTest(eTest);
-							System.out.println("failed");							
-							//breaking the outerloop will end the entire test suite!
+							System.out.println("a test has failed");							
+							//breaking the outerloop will end the entire test suite
 							break outerloop;
 						}						
 					}

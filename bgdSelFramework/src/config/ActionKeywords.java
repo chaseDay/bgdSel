@@ -154,10 +154,24 @@ public class ActionKeywords {
 			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator(OR.getProperty(object))));
 			actions.moveToElement(element).perform();
 		}
-		catch(Exception e){
+		catch(Exception x){
+			try{
+				thisThread.eTest.log(LogStatus.WARNING, "First hover on "+object+" didn't work. This sometimes occurs with the Chrome webdriver.  Trying again using Javascript");
+				WebElement element = driver.findElement(getLocator(OR.getProperty(object)));
+				String mouseOverScript = 
+						  "if(document.createEvent){"
+						+ "var evObj = document.createEvent('MouseEvents');"
+						+ "evObj.initEvent('mouseover', true, false);"
+						+ " arguments[0].dispatchEvent(evObj);"
+						+ "} else if(document.createEventObject) { "
+						+ "arguments[0].fireEvent('onmouseover');}";
+				((JavascriptExecutor)driver).executeScript(mouseOverScript,element);
+			}
+			catch(Exception e){
 			thisThread.eTest.log(LogStatus.FAIL, "Not able to hover" + object + " --- " + e.getMessage());
 			System.out.println("actionkeywords : "+e.getMessage());
 			thisThread.bResult = false;
+			}
 		}
 	}
 	
